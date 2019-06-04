@@ -49,6 +49,7 @@
 		<div id="navigation">
 			<h2>카테고리</h2>
 			<h1>${pageContext.servletContext.contextPath }</h1>
+			<h1>${pageContext.request.contextPath}</h1>
 			<ul>
 				<c:forEach items="${resultCategoryVo }" var="resultCategoryVo">
 					<li><a
