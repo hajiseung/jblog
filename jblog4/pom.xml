@@ -11,6 +11,7 @@
 	<packaging>war</packaging>
 	
 	<build>
+	<finalName>${artifactId}</finalName>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
