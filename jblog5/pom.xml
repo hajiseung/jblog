@@ -68,7 +68,6 @@
 
 	<build>
 		<finalName>${artifactId}</finalName>
-		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
@@ -88,7 +87,9 @@
 					<path>/springboot-jblog5</path>
 					<username>admin</username>
 					<password>manager</password>
+					
 				</configuration>
+				
 			</plugin>
 		</plugins>
 
