@@ -31,8 +31,11 @@ public class BlogController {
 
 	// 회원 블로그로 이동
 	@GetMapping({ "", "/{pathVariable}", "/{pathVariable1}/{pathVariable2}" })
-	public String userBlog(@PathVariable Optional<String> blogid, @PathVariable Optional<Integer> pathVariable,
-			@PathVariable Optional<Integer> pathVariable1, @PathVariable Optional<Integer> pathVariable2,
+	public String userBlog(
+			@PathVariable Optional<String> blogid, 
+			@PathVariable Optional<Integer> pathVariable,
+			@PathVariable Optional<Integer> pathVariable1, 
+			@PathVariable Optional<Integer> pathVariable2,
 			ModelMap modelMap, BlogVo blogVo) {
 		//사용자 있나 없나 체크
 		UserVo usercheck = blogService.checkUser(blogid);
@@ -50,6 +53,7 @@ public class BlogController {
 		List<PostVo> resultPostVo = (List<PostVo>) result.get("postVoList");
 		PostVo postVoOne = (PostVo) result.get("postVoOne");
 		
+		System.out.println(resultBlogVo);
 		modelMap.addAttribute("resultBlogVo", resultBlogVo);
 		modelMap.addAttribute("resultCategoryVo", resultCategoryVo);
 		modelMap.addAttribute("resultPostVo", resultPostVo);

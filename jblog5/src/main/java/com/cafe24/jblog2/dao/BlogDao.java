@@ -10,13 +10,15 @@ import com.cafe24.jblog2.vo.BlogVo;
 public class BlogDao {
 	@Autowired
 	private SqlSession sqlSession;
-	
+
 	public BlogVo get(BlogVo blogVo) {
-		return sqlSession.selectOne("blog.get", blogVo);
+		BlogVo result = sqlSession.selectOne("blog.get", blogVo);
+		System.out.println("Dao::::::::::::::::"+result);
+		return result;
 	}
 
 	public void updateBlog(BlogVo blogVo) {
-		sqlSession.update("blog.updateBlog",blogVo);
+		sqlSession.update("blog.updateBlog", blogVo);
 	}
 
 }

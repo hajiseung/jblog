@@ -62,8 +62,7 @@ public class WebConfig implements WebMvcConfigurer {
 		registry.addInterceptor(authLoginIntercetpor()).addPathPatterns("/user/auth");
 		registry.addInterceptor(authLogoutIntercetpor()).addPathPatterns("/user/logout");
 		registry.addInterceptor(authIntercetpor()).addPathPatterns("/**").excludePathPatterns("/user/auth")
-				.excludePathPatterns("/user/logout").excludePathPatterns("/assets/**").excludePathPatterns("/images/**")
-				.excludePathPatterns("/user/**");
+				.excludePathPatterns("/user/logout").excludePathPatterns("/assets/**").excludePathPatterns("/user/**");
 	}
 
 	@Bean
@@ -91,7 +90,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/images/**").addResourceLocations("file:/mysite-upload");
+		registry.addResourceHandler("/images/**").addResourceLocations("file:/mysite-uploads/");
 	}
 //	MVCConfig로 옴겨짐
 //	@Bean
